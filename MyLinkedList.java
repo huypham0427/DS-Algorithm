@@ -29,6 +29,23 @@ public class MyLinkedList{
         }
     }
 
+    /* Add new Node to the head of LinkedList */
+    public static Node addToHead(Node headNode, int value){
+        Node newNode = new Node(value);
+
+        // if(headNode == null){
+        //     return newNode;
+        // }else{
+        //     newNode.next = headNode;
+        //     return newNode;
+        // }
+
+        if(headNode != null){
+            newNode.next = headNode;
+        }
+        return newNode;
+    }
+
     public static void main(String[] args){
         Node n1 = new Node(1);
         Node n2 = new Node(2);
@@ -40,6 +57,10 @@ public class MyLinkedList{
         printLinkedList(n1);
         printLinkedList(n2);
         printLinkedList(n3);
+
+        System.out.println("Add to head LinkedList");
+        Node newList = addToHead(n1, 4);
+        printLinkedList(newList);
     }
 
 }
